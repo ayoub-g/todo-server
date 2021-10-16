@@ -1,0 +1,26 @@
+type Query {
+  todos: [Todo]
+}
+type Todo {
+  id: ID
+  content: String
+  isCompleted: Boolean
+  createdAt: Int
+}
+input TodoInput {
+  content: String
+}
+type Mutation {
+  # @Description: Creates a new Todo
+  # @Returns: the created Todo, or null if Todo was not created
+  createTodo(input: TodoInput!): Todo
+
+  # @Description: set todo completed or not
+  # @Returns: true if Toodo was successfuly updated,false  otherwise
+
+  updateTodoStatus(id: ID!, isCompleted: Boolean): Boolean
+
+  # @Description:  Removes a Todo
+  # @Returns: true if Toodo was successfuly deleted, false if Todo was not deleted
+  removeTodo(id: ID!): Boolean
+}
