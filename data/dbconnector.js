@@ -1,5 +1,5 @@
 // sequelize
-import getConnectionString from "./getConnectionString";
+import getConnectionString from "./getConnectionString.js";
 import Sequelize from "sequelize";
 
 const { host, port, database, username, password } = await getConnectionString();

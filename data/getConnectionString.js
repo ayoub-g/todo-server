@@ -1,9 +1,28 @@
-/* This is for the development environment only,For production mode use a secure method to get the connection string */
-const getConnectionString = async () => ({
-  host: 'localhost',
-  database: 'todoapp',
-  port: '5432',
-  username: 'testuser',
-  password: 'HbdEvgmtGUc98T',
-});
+/* This is for the development environment only,For productionmode use a secure method to get the connection string */
+import AWS from "aws-sdk";
+const secretsmanager = new AWS.SecretsManager({ region, apiVersion: '2017-10-17' });
+const stage = process.env.stage;
+const region = process.env.AWS_REGION;
+const SecretId = process.env.SECRET_ID;
+console.log('stage:', stage);
+console.log('region', region)
+const params = { SecretId };
+
+const getRemoteConfig = async () => {
+
+  const { SecretString } = await secretsmanager.getSecretValue(params).promise();
+  console.log(SecretString);
+  const { host, database, port, username, password } = SecretString;
+  return { host, database, port, username, password }
+
+}
+const getConnectionString = async () => (
+  stage == 'local' ?
+    {
+      host: 'localhost',
+      database: 'todoapp',
+      port: '5432',
+      username: 'testuser',
+      password: 'HbdEvgmtGUc98T',
+    } : getRemoteConfig());
 export default getConnectionString;
