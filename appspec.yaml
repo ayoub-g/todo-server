@@ -3,7 +3,11 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/todo-app-server
-hook:
+hooks:
+  ApplicationStart:
+    - location: scripts/application_start.sh
+      timeout: 120
+      runas: ubuntu
   ApplicationStop:
     - location: scripts/application_stop.sh
       timeout: 40
@@ -12,9 +16,6 @@ hook:
     - location: scripts/before_install.sh
       timeout: 120
       runas: ubuntu
-  ApplicationStart:
-    - location: scripts/application_start.sh
-      timeout: 120
-      runas: ec2-user
+  
 
    
