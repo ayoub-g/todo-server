@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "stopping app"
+echo "stopping todo app server"
 pkill node
 
 
