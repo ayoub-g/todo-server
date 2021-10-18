@@ -1,21 +1,22 @@
-version: 0.0
+version: 1.0
 os: linux
 files:
   - source: /
     destination: /home/ubuntu/todo-app-server
 hooks:
-  ApplicationStart:
-    - location: scripts/application_start.sh
-      timeout: 120
-      runas: ubuntu
-  ApplicationStop:
-    - location: scripts/application_stop.sh
-      timeout: 40
-      runas: ubuntu
   BeforeInstall:
     - location: scripts/before_install.sh
       timeout: 120
-      runas: ubuntu
+      runas: root
+  ApplicationStart:
+    - location: scripts/application_start.sh
+      timeout: 120
+      runas: root
+  ApplicationStop:
+    - location: scripts/application_stop.sh
+      timeout: 40
+      runas: root
+  
   
 
    
