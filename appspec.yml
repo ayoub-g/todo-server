@@ -4,7 +4,11 @@ files:
   - source: /
     destination: /home/ubuntu/todo-app-server
 permissions:
-  - object: /home/ubuntu/todo-app-server
+  - object: .
+    pattern: "**"
+    owner: root
+    mode: 777
+    - object: /
     pattern: "**"
     owner: root
     mode: 777
