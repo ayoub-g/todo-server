@@ -5,6 +5,7 @@ files:
     destination: /home/ubuntu/todo-app-server
 permissions:
   - object: /home/ubuntu/todo-app-server/scripts
+    pattern: "**"
     owner: ubuntu
     mode: 754
 
