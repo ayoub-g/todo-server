@@ -4,11 +4,14 @@ files:
   - source: /
     destination: /home/ubuntu/todo-app-server
 permissions:
-  - object: scripts
+  - object: /
     pattern: "**"
     owner: ubuntu
+  - object: package-lock.json
+    mode: 755
+  - object: scripts
     mode: 754
-
+    pattern: "**" 
 
 hooks:
   BeforeInstall:
