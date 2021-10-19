@@ -8,7 +8,12 @@ permissions:
     owner: root
     mode: 777
     type: 
-     - directory 
+     - directory
+  - object: /home/ubuntu/todo-app-server
+    owner: root
+    mode: 777
+    type: 
+     - file
 
 hooks:
   BeforeInstall:
