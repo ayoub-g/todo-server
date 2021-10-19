@@ -6,7 +6,7 @@ files:
 permissions:
   - object: /home/ubuntu/todo-app-server
     pattern: "**"
-    owner: ubuntu
+    owner: root
     mode: 777
 
 hooks:
