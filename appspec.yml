@@ -3,16 +3,23 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/todo-app-server
+permissions:
+  - object: scripts
+    pattern: "**"
+    owner: ubuntu
+    mode: 754
+
+
 hooks:
-  Install:
-    - location: scripts/application_install.sh
+  BeforeInstall:
+    - location: scripts/application_before_install.sh
       timeout: 40
-      runas: root
+      runas: ubuntu
   ApplicationStop:
     - location: scripts/application_stop.sh
       timeout: 40
-      runas: root
+      runas: ubuntu
   ApplicationStart:
     - location: scripts/application_start.sh
       timeout: 120
-      runas: root
+      runas: ubuntu
