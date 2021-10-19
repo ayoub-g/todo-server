@@ -4,16 +4,10 @@ files:
   - source: /
     destination: /home/ubuntu/todo-app-server
 permissions:
-  - object: /home/ubuntu/
-    owner: root
-    mode: 777
-    type: 
-     - directory
-  - object: /home/ubuntu/todo-app-server
-    owner: root
-    mode: 777
-    type: 
-     - file
+  - object: /home/ubuntu/todo-app-server/scripts
+    owner: ubuntu
+    mode: 754
+
 
 hooks:
   BeforeInstall:
