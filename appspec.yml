@@ -4,7 +4,7 @@ files:
   - source: /
     destination: /home/ubuntu/todo-app-server
 permissions:
-  - object: /home/ubuntu/todo-app-server
+  - object: /home/ubuntu/
     owner: root
     mode: 777
     type: 
