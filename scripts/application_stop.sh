@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo pkill node
+pkill node
 exit 0
 
 
