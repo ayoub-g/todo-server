@@ -1,3 +1,5 @@
 #/bin/bash
 cd /home/ubuntu/todo-app-server
-npm install
+export AWS_REGION=eu-central-1
+export SECRET_ID=todoapp-rds
+npm install > output.log

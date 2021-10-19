@@ -7,19 +7,17 @@ permissions:
   - object: /home/ubuntu/todo-app-server/scripts
     pattern: "**"
     owner: ubuntu
-    mode: 754
-
-
+    mode: 755
 hooks:
   BeforeInstall:
     - location: scripts/application_before_install.sh
-      timeout: 40
-      runas: ubuntu
+      timeout: 50
+      runas: root
   ApplicationStop:
     - location: scripts/application_stop.sh
-      timeout: 40
-      runas: ubuntu
+      timeout: 50
+      runas: root
   ApplicationStart:
     - location: scripts/application_start.sh
-      timeout: 120
+      timeout: 200
       runas: ubuntu

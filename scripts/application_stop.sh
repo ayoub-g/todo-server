@@ -1,4 +1,3 @@
 #!/bin/bash
-pkill node
-
-
+cd /home/ubuntu
+exit 0

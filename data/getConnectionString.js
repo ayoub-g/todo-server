@@ -1,9 +1,10 @@
 /* This is for the development environment only,For productionmode use a secure method to get the connection string */
 import AWS from "aws-sdk";
+const region = process.env.AWS_REGION;
 const secretsmanager = new AWS.SecretsManager({ region, apiVersion: '2017-10-17' });
 const stage = process.env.stage;
-const region = process.env.AWS_REGION;
 const SecretId = process.env.SECRET_ID;
+console.log('SecretId:',SecretId)
 console.log('stage:', stage);
 console.log('region', region)
 const params = { SecretId };
