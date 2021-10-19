@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "stopping todo app server"
-pkill node > /home/ubuntu/output_kill.log
+pkill node
 exit 0
 
 
