@@ -7,10 +7,9 @@ permissions:
   - object: /
     pattern: "**"
     owner: ubuntu
+    mode: 777
   - object: package-lock.json
-    mode: 755
   - object: scripts
-    mode: 754
     pattern: "**" 
 
 hooks:
