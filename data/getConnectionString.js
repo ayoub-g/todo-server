@@ -25,5 +25,5 @@ const getConnectionString = async () => (
       port: '5432',
       username: 'testuser',
       password: 'HbdEvgmtGUc98T',
-    } : getRemoteConfig());
+    } : await getRemoteConfig());
 export default getConnectionString;
