@@ -4,9 +4,6 @@ const region = process.env.AWS_REGION;
 const secretsmanager = new AWS.SecretsManager({ region, apiVersion: '2017-10-17' });
 const stage = process.env.stage;
 const SecretId = process.env.SECRET_ID;
-console.log('SecretId:', SecretId)
-console.log('stage:', stage);
-console.log('region', region)
 const params = { SecretId };
 
 const getRemoteConfig = async () => {
